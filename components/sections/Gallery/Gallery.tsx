@@ -29,6 +29,7 @@ import { gsap, ScrollTrigger, EASE, prefersReducedMotion } from "@/lib/gsap";
 import { sceneScrub } from "@/lib/scene";
 import { FRAMES } from "@/content/gallery";
 import { useLang } from "@/lib/i18n";
+import { assetUrl } from "@/lib/site";
 import styles from "./Gallery.module.css";
 
 /* ---- DriftWall parameters (reference values) ---- */
@@ -216,7 +217,7 @@ export default function Gallery() {
                     aria-hidden={i >= col.length}
                   >
                     <img
-                      src={f.src}
+                      src={assetUrl(f.src)}
                       alt={i < col.length ? t("gallery.alt") : ""}
                       loading={ci < 3 && i < 2 ? "eager" : "lazy"}
                       decoding="async"

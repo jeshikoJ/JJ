@@ -6,6 +6,7 @@ import { gsap, prefersReducedMotion, EASE } from "@/lib/gsap";
 import Button from "@/components/ui/Button";
 import styles from "./Hero.module.css";
 import { useLang } from "@/lib/i18n";
+import { assetUrl } from "@/lib/site";
 
 const STATS_LEFT = [
   { n: 3, suffix: "+", key: "stat.projects", icon: "/images/icons/projects.png" },
@@ -29,7 +30,7 @@ const PARTICLES = [
 function StatCard({ n, suffix, label, icon }: { n: number; suffix: string; label: string; icon: string }) {
   return (
     <div className={styles.statCard}>
-      <img className={styles.statIcon} src={icon} alt="" aria-hidden="true" />
+      <img className={styles.statIcon} src={assetUrl(icon)} alt="" aria-hidden="true" />
       <div className={styles.statNum} data-count={n}>
         <span>0</span>
         <i>{suffix}</i>
@@ -221,7 +222,7 @@ export default function Hero() {
 
           <Image
             className={styles.portrait}
-            src="/images/portrait.png"
+            src={assetUrl("/images/portrait.png")}
             alt="Jeshiko J — DevOps Engineer & Cloud Architect"
             width={554}
             height={573}

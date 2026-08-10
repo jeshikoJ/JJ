@@ -25,7 +25,7 @@ const MARKS: Record<string, ReactNode> = {
 };
 
 const SOCIALS = [
-  { name: "LinkedIn", mark: "linkedin", href: "https://linkedin.com/in/JeshikoJ" },
+  { name: "LinkedIn", mark: "linkedin", href: "https://www.linkedin.com/in/jeshiko-j/" },
   { name: "GitHub", mark: "github", href: "https://github.com/jeshikoJ" },
   { name: "Email", glyph: "@", href: "mailto:chandranjeshiko@gmail.com" },
 ] as const;

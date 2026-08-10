@@ -13,7 +13,7 @@ export const PERSON = {
   location: "Kanyakumari, Tamil Nadu, India",
   /* profile URLs as supplied */
   sameAs: [
-    "https://linkedin.com/in/JeshikoJ",
+    "https://www.linkedin.com/in/jeshiko-j/",
     "https://github.com/jeshikoJ",
     "https://jeshikoJ.github.io",
   ],

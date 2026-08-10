@@ -64,6 +64,10 @@ export const PROJECTS: Project[] = [
       src: "/images/projects/restaurant-cover.jpg",
       variant: "photo",
     },
+    site: {
+      url: "https://admin-ten-eta-17.vercel.app/",
+      label: "admin-ten-eta-17.vercel.app",
+    },
     repo: "https://github.com/jeshikoJ",
     study: {
       role: "DevOps & Backend Engineer",

@@ -65,9 +65,9 @@ body {
   font-size: 16px;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
-  /* `clip` rather than `hidden`: both block horizontal scroll, but `hidden`
-     makes body a scroll container and silently disables position:sticky
-     anywhere on the page. Keeping `clip` leaves that door open. */
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  -webkit-tap-highlight-color: transparent;
   overflow-x: clip;
 }
 

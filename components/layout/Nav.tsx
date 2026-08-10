@@ -64,16 +64,20 @@ export default function Nav() {
 
       /* scroll-spy: the nav reflects where you actually are, and falls back
          to Home whenever you are near the top of the document */
-      const spies = LINKS.filter((l) => l.watch).map((l) =>
-        ScrollTrigger.create({
-          trigger: `#${l.watch}`,
-          start: "top 55%",
-          end: "bottom 45%",
-          onToggle: (self) => {
-            if (self.isActive) setActive(l.watch);
-          },
+      const spies = LINKS.filter((l) => l.watch)
+        .map((l) => {
+          const targetEl = document.getElementById(l.watch!);
+          if (!targetEl) return null;
+          return ScrollTrigger.create({
+            trigger: targetEl,
+            start: "top 55%",
+            end: "bottom 45%",
+            onToggle: (self) => {
+              if (self.isActive) setActive(l.watch);
+            },
+          });
         })
-      );
+        .filter((s): s is ScrollTrigger => s !== null);
       const top = ScrollTrigger.create({
         start: 0,
         end: () => window.innerHeight * 1.2,

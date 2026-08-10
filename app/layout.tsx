@@ -31,7 +31,7 @@ const caveat = Caveat({
 });
 
 const DESCRIPTION =
-  "DevOps Engineer & Cloud Architect specializing in AWS infrastructure automation, CI/CD pipeline design, Terraform, Docker, Kubernetes, and system reliability engineering. Based in Kanyakumari, Tamil Nadu.";
+  "DevOps Engineer & Cloud Architect specializing in AWS infrastructure automation, CI/CD pipeline design, Terraform, Docker, Kubernetes, and system reliability engineering. Based in Chennai, Tamil Nadu.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -70,7 +70,7 @@ const personJsonLd = {
   jobTitle: PERSON.jobTitle,
   email: `mailto:${PERSON.email}`,
   telephone: PERSON.phone,
-  address: { "@type": "PostalAddress", addressLocality: "Kanyakumari", addressRegion: "Tamil Nadu", addressCountry: "IN" },
+  address: { "@type": "PostalAddress", addressLocality: "Chennai", addressRegion: "Tamil Nadu", addressCountry: "IN" },
   url: SITE_URL,
   sameAs: PERSON.sameAs,
 };

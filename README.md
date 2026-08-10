@@ -1,6 +1,6 @@
 # Jeshiko J — DevOps Engineer & Cloud Architect Portfolio
 
-Personal portfolio of **Jeshiko J**, DevOps Engineer & Cloud Architect based in Kanyakumari, Tamil Nadu, India. A single-page cinematic experience featuring AWS Cloud Architecture, CI/CD Automation, Terraform, Docker, and Kubernetes.
+Personal portfolio of **Jeshiko J**, DevOps Engineer & Cloud Architect based in Chennai, Tamil Nadu, India. A single-page cinematic experience featuring AWS Cloud Architecture, CI/CD Automation, Terraform, Docker, and Kubernetes.
 
 **Live Site:** [https://jeshikoJ.github.io/JJ/](https://jeshikoJ.github.io/JJ/)  
 **Profiles:** [LinkedIn](https://www.linkedin.com/in/jeshiko-j/) · [GitHub](https://github.com/jeshikoJ)

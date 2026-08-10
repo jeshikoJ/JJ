@@ -47,13 +47,13 @@ export const CHAPTERS: Chapter[] = [
     id: "ai-cloud",
     year: "Aug 2024 – Sep 2024",
     title: "Artificial Intelligence & Cloud Intern",
-    place: "Crescent Infotech · Kanyakumari",
+    place: "Crescent Infotech · Chennai",
     story:
       "Artificial Intelligence Intern at Crescent Infotech. Worked across the full Software Development Life Cycle (SDLC), deploying AI applications on AWS EC2, configuring Security Groups, IAM roles, and VPC network isolation to optimize cloud reliability and operational costs by 30%.",
     bridge: "Direct experience with AWS infrastructure cemented cloud deployment and DevOps as core specializations.",
     fr: {
       title: "Stagiaire Intelligence Artificielle & Cloud",
-      place: "Crescent Infotech · Kanyakumari",
+      place: "Crescent Infotech · Chennai",
       story:
         "Stage en IA chez Crescent Infotech. Déploiement d'applications IA sur AWS EC2 avec configuration de groupes de sécurité, rôles IAM et règles réseau VPC, réduisant les coûts d'exploitation de 30%.",
       bridge: "L'expérience pratique AWS a confirmé l'ingénierie DevOps et le Cloud comme domaines d'expertise.",

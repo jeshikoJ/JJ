@@ -26,7 +26,7 @@ export const ROLES: Role[] = [
     company: "DevOps & Cloud Engineering",
     role: "DevOps Engineer & Cloud Architect",
     type: "Full-time",
-    location: "Kanyakumari, Tamil Nadu · Remote",
+    location: "Chennai, Tamil Nadu · Remote",
     period: "Dec – Jun 2026",
     summary:
       "Architecting automated multi-cloud infrastructures on AWS, driving zero-downtime CI/CD pipelines via Docker, Kubernetes, Jenkins, Terraform, and Ansible.",
@@ -55,7 +55,7 @@ export const ROLES: Role[] = [
     company: "Crescent Infotech",
     role: "Artificial Intelligence Intern",
     type: "Internship",
-    location: "Kanyakumari, Tamil Nadu",
+    location: "Chennai, Tamil Nadu",
     period: "Aug 2024 – Sep 2024",
     summary:
       "Architected and executed SDLC from requirements gathering to production deployment on AWS EC2, achieving a 30% reduction in operational overhead.",

@@ -19,7 +19,7 @@ export const PERSON = {
   jobTitle: "DevOps Engineer & Cloud Architect",
   email: "chandranjeshiko@gmail.com",
   phone: "+91-7395881571",
-  location: "Kanyakumari, Tamil Nadu, India",
+  location: "Chennai, Tamil Nadu, India",
   /* profile URLs as supplied */
   sameAs: [
     "https://www.linkedin.com/in/jeshiko-j/",

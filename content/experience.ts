@@ -26,7 +26,7 @@ export const ROLES: Role[] = [
     company: "DevOps & Cloud Engineering",
     role: "DevOps Engineer & Cloud Architect",
     type: "Full-time",
-    location: "Chennai, Tamil Nadu · Remote",
+    location: "Chennai, Tamil Nadu",
     period: "Dec – Jun 2026",
     summary:
       "Architecting automated multi-cloud infrastructures on AWS, driving zero-downtime CI/CD pipelines via Docker, Kubernetes, Jenkins, Terraform, and Ansible.",

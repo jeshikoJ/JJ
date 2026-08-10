@@ -1,10 +1,10 @@
 "use client";
 
 /*
- * LET'S CONNECT — the closing chapter
+ * LET'S CONNECT — multi-option email & contact section
  */
 
-import { useEffect, useRef, type ReactNode } from "react";
+import { useEffect, useRef, useState, type ReactNode } from "react";
 import { gsap, EASE, prefersReducedMotion } from "@/lib/gsap";
 import Button from "@/components/ui/Button";
 import styles from "./Connect.module.css";
@@ -24,22 +24,40 @@ const MARKS: Record<string, ReactNode> = {
   ),
 };
 
+const EMAIL_ADDRESS = "chandranjeshiko@gmail.com";
+
 const SOCIALS = [
   { name: "LinkedIn", mark: "linkedin", href: "https://www.linkedin.com/in/jeshiko-j/" },
   { name: "GitHub", mark: "github", href: "https://github.com/jeshikoJ" },
-  { name: "Email", glyph: "@", href: "mailto:chandranjeshiko@gmail.com" },
+  { name: "Direct Mail", glyph: "@", href: `mailto:${EMAIL_ADDRESS}?subject=Project%20Inquiry%20-%20Jeshiko%20J` },
 ] as const;
 
 export default function Connect() {
   const root = useRef<HTMLElement>(null);
   const { t } = useLang();
+  const [copied, setCopied] = useState(false);
+  const [name, setName] = useState("");
+  const [senderEmail, setSenderEmail] = useState("");
+  const [message, setMessage] = useState("");
+
+  const handleCopyEmail = () => {
+    navigator.clipboard.writeText(EMAIL_ADDRESS);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2500);
+  };
+
+  const handleFormSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    const subject = encodeURIComponent(`Portfolio Message from ${name || 'Visitor'}`);
+    const body = encodeURIComponent(`Name: ${name}\nEmail: ${senderEmail}\n\nMessage:\n${message}`);
+    window.location.href = `mailto:${EMAIL_ADDRESS}?subject=${subject}&body=${body}`;
+  };
 
   useEffect(() => {
     const el = root.current;
     if (!el || prefersReducedMotion()) return;
 
     const ctx = gsap.context(() => {
-      /* reveal */
       gsap.from(`.${styles.head} > *`, {
         y: 36,
         autoAlpha: 0,
@@ -73,15 +91,62 @@ export default function Connect() {
           {t("connect.h2a")}{" "}
           <em className={styles.serif}>{t("connect.h2Em")}</em>
         </h2>
-        <p className={styles.lede}>
-          {t("connect.lede")}
-        </p>
-        <div className={styles.cta}>
-          <Button href="mailto:chandranjeshiko@gmail.com" variant="primary" arrow>
+        <p className={styles.lede}>{t("connect.lede")}</p>
+
+        {/* Email options row */}
+        <div className={styles.ctaGroup}>
+          <Button href={`mailto:${EMAIL_ADDRESS}?subject=Inquiry%20for%20Jeshiko%20J`} variant="primary" arrow>
             {t("connect.cta")}
           </Button>
+
+          <a
+            href={`https://mail.google.com/mail/?view=cm&fs=1&to=${EMAIL_ADDRESS}&su=Inquiry%20for%20Jeshiko%20J`}
+            target="_blank"
+            rel="noreferrer"
+            className={styles.webMailBtn}
+          >
+            Open in Gmail ↗
+          </a>
+
+          <button type="button" onClick={handleCopyEmail} className={styles.copyBtn}>
+            {copied ? "Copied! ✓" : "Copy Email 📋"}
+          </button>
         </div>
       </div>
+
+      {/* Interactive Quick Message Form */}
+      <form className={styles.contactForm} onSubmit={handleFormSubmit}>
+        <h3 className={styles.formTitle}>Send a Quick Message</h3>
+        <div className={styles.formGrid}>
+          <input
+            type="text"
+            placeholder="Your Name"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+            required
+            className={styles.input}
+          />
+          <input
+            type="email"
+            placeholder="Your Email"
+            value={senderEmail}
+            onChange={(e) => setSenderEmail(e.target.value)}
+            required
+            className={styles.input}
+          />
+        </div>
+        <textarea
+          placeholder="Your Message or Project Details..."
+          value={message}
+          onChange={(e) => setMessage(e.target.value)}
+          required
+          rows={4}
+          className={styles.textarea}
+        />
+        <button type="submit" className={styles.sendBtn}>
+          Send Message →
+        </button>
+      </form>
 
       {/* social cards */}
       <div className={styles.socials}>

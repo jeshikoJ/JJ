@@ -29,6 +29,7 @@ import { sceneScrub } from "@/lib/scene";
 import { CERTS } from "@/content/certifications";
 import styles from "./Certifications.module.css";
 import { useLang, L } from "@/lib/i18n";
+import { assetUrl } from "@/lib/site";
 
 /* scroll length per credential — see the note in Experience.tsx: the pinned
    sections are kept tight so the page never feels locked */
@@ -243,7 +244,7 @@ export default function Certifications() {
                   {c.logo ? (
                     <span className={styles.logoPlate}>
                       <img
-                        src={c.logo.src}
+                        src={assetUrl(c.logo.src)}
                         alt={c.issuer ?? ""}
                         style={{ aspectRatio: c.logo.aspect }}
                       />

@@ -32,6 +32,7 @@ import { gsap, prefersReducedMotion } from "@/lib/gsap";
 import { TOOLS } from "@/content/stack";
 import styles from "./DesignStack.module.css";
 import { useLang } from "@/lib/i18n";
+import { assetUrl } from "@/lib/site";
 
 const TWO_PI = Math.PI * 2;
 
@@ -287,7 +288,7 @@ export default function DesignStack() {
               <span className={styles.face}>
                 <span className={styles.mark}>
                   {t.src ? (
-                    <img src={t.src} alt="" aria-hidden="true" />
+                    <img src={assetUrl(t.src)} alt="" aria-hidden="true" />
                   ) : (
                     <span
                       className={styles.mono}

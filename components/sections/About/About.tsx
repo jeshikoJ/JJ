@@ -6,6 +6,7 @@ import Button from "@/components/ui/Button";
 import VelocityMarquee from "@/components/ui/VelocityMarquee";
 import styles from "./About.module.css";
 import { useLang } from "@/lib/i18n";
+import { assetUrl } from "@/lib/site";
 
 const MARQUEE_ROWS = [
   {
@@ -162,7 +163,7 @@ export default function About() {
           <div className={styles.sideCol}>
             <div className={`${styles.sideCard} ${styles.imgCard}`}>
               <img
-                src="/images/portrait.jpg"
+                src={assetUrl("/images/portrait.jpg")}
                 alt="Jeshiko J — DevOps Engineer & Cloud Architect"
                 style={{ width: "100%", height: "100%", objectFit: "cover", borderRadius: "var(--radius)" }}
               />

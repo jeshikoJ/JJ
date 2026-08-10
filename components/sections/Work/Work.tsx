@@ -13,6 +13,7 @@ import { sceneScrub } from "@/lib/scene";
 import { PROJECTS } from "@/content/projects";
 import styles from "./Work.module.css";
 import { useLang, L } from "@/lib/i18n";
+import { assetUrl } from "@/lib/site";
 
 const SPREAD = 330; /* px between card centers on the arc */
 /* Scroll px per card. With 14 projects this is the page's longest pin, so
@@ -120,7 +121,7 @@ export default function Work() {
         <div className={styles.track}>
           {PROJECTS.map((p, i) => (
             <article className={styles.card} key={p.slug} style={{ zIndex: 100 - i }}>
-              <a className={styles.inner} href={`/work/${p.slug}`}>
+              <a className={styles.inner} href={assetUrl(`/work/${p.slug}`)}>
                 <div
                   className={styles.cover}
                   style={
@@ -133,7 +134,7 @@ export default function Work() {
                     /* his own capture of the built site — full-bleed */
                     <img
                       className={styles.coverPhoto}
-                      src={p.cover.src}
+                      src={assetUrl(p.cover.src)}
                       alt={p.coverLabel}
                       style={p.cover.focus ? { objectPosition: p.cover.focus } : undefined}
                       loading="lazy"
@@ -142,7 +143,7 @@ export default function Work() {
                     /* verified brand mark, sized by its true aspect ratio */
                     <img
                       className={styles.coverBrand}
-                      src={p.cover.src}
+                      src={assetUrl(p.cover.src)}
                       alt={p.coverLabel}
                       style={{ aspectRatio: p.cover.aspect ?? 1 }}
                       loading="lazy"

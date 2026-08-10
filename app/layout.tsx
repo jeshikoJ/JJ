@@ -2,7 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Inter, Instrument_Serif, Caveat } from "next/font/google";
 import SmoothScroll from "@/components/layout/SmoothScroll";
 import { LanguageProvider } from "@/lib/i18n";
-import { SITE_URL, PERSON } from "@/lib/site";
+import { SITE_URL, PERSON, assetUrl } from "@/lib/site";
 import "./globals.css";
 
 export const viewport: Viewport = {
@@ -42,11 +42,11 @@ export const metadata: Metadata = {
   description: DESCRIPTION,
   icons: {
     icon: [
-      { url: "/favicon.ico", sizes: "32x32", type: "image/x-icon" },
-      { url: "/icon.png", sizes: "512x512", type: "image/png" },
+      { url: assetUrl("/favicon.ico"), sizes: "32x32", type: "image/x-icon" },
+      { url: assetUrl("/icon.png"), sizes: "512x512", type: "image/png" },
     ],
-    shortcut: "/favicon.ico",
-    apple: "/apple-touch-icon.png",
+    shortcut: assetUrl("/favicon.ico"),
+    apple: assetUrl("/apple-touch-icon.png"),
   },
   openGraph: {
     title: "Jeshiko J — DevOps Engineer & Cloud Architect",

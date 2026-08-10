@@ -35,8 +35,9 @@ export function scrollToHash(hash: string) {
   const lenis = getLenis();
 
   if (lenis) {
-    if (toTop) lenis.scrollTo(0, { duration: 1.1 });
-    else lenis.scrollTo(target as HTMLElement, { offset: -headerOffset(), duration: 1.1 });
+    const easeOutExpo = (t: number) => (t === 1 ? 1 : 1 - Math.pow(2, -10 * t));
+    if (toTop) lenis.scrollTo(0, { duration: 1.2, easing: easeOutExpo });
+    else lenis.scrollTo(target as HTMLElement, { offset: -headerOffset(), duration: 1.2, easing: easeOutExpo });
   } else {
     /* reduced motion / no Lenis — scroll-margin-top in globals.css
        keeps the landing position correct here too */

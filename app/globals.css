@@ -74,6 +74,15 @@ body {
 img {
   max-width: 100%;
   display: block;
+  image-rendering: -webkit-optimize-contrast;
+}
+
+/* GPU hardware acceleration helper for smooth 60-120fps motion */
+.gpuAccelerated,
+section,
+article {
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
 }
 
 /* The closing frame: rises over the last sticky scene and covers it, then

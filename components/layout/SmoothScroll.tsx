@@ -13,14 +13,17 @@ export default function SmoothScroll({ children }: { children: ReactNode }) {
     let lenis: Lenis | null = null;
     let raf: ((time: number) => void) | null = null;
 
+    const isTouchDevice = window.matchMedia("(max-width: 1000px), (hover: none) and (pointer: coarse)").matches;
+
     if (!prefersReducedMotion()) {
       lenis = new Lenis({
         lerp: 0.08,
         duration: 1.2,
         wheelMultiplier: 1.0,
-        touchMultiplier: 1.6,
+        touchMultiplier: 0,
         smoothWheel: true,
-        syncTouch: true,
+        syncTouch: false,
+        syncTouchLerp: 0.08,
       });
       lenis.on("scroll", ScrollTrigger.update);
       raf = (time: number) => lenis!.raf(time * 1000);

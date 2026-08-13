@@ -320,7 +320,9 @@ export default function TunnelIntro({ text = "JESHIKO J" }: { text?: string }) {
     }
 
     /* ================= journey state ================= */
-    document.body.classList.add("intro-active");
+    if (!compact) {
+      document.body.classList.add("intro-active");
+    }
 
     let progress = 0; /* pin progress, scrub-smoothed by ScrollTrigger */
     let scrollPos = 0; /* travel, lerped toward target — the inertia layer */
@@ -435,7 +437,9 @@ export default function TunnelIntro({ text = "JESHIKO J" }: { text?: string }) {
       onUpdate: (self) => {
         progress = self.progress;
         /* nav returns as the hero arrives */
-        document.body.classList.toggle("intro-active", self.progress < 0.94);
+        if (!compact) {
+          document.body.classList.toggle("intro-active", self.progress < 0.94);
+        }
         /* progress rail */
         const stage = Math.min(STAGES, 1 + Math.floor(self.progress * STAGES));
         if (stage !== stageShown && stageEl) {
